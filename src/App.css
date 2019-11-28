@@ -1,6 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 /* Global Styles */
+
+/* Scroll bar */
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: #bbb;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* / Scroll bar */
+
 :root {
   --primary-color: #003699;
   --dark-color: #333333;
@@ -94,7 +123,7 @@ img {
 .card {
   padding: 1rem;
   border: #ccc 1px dotted;
-  margin: 0.7rem 0;
+  margin: 0 0 0.7rem;
 }
 
 /* List */
@@ -387,25 +416,30 @@ table th {
 /* Animation (Add After) */
 .item-enter {
   opacity: 0;
+  transform: scale(0.1);
 }
 .item-enter-active {
   opacity: 1;
-  transition: opacity 1000ms ease-in;
+  transform: translateX(0);
+  transition: opacity 100ms, transform 300ms;
 }
 .item-exit {
   opacity: 1;
 }
 .item-exit-active {
   opacity: 0;
-  transition: opacity 1000ms ease-in;
+  transform: scale(0.1);
+  transition: opacity 300ms, transform 400ms;
 }
 
 /* Mobile Styles */
-@media (max-width: 700px) {
+@media (max-width: 400px) {
   .hide-sm {
     display: none;
   }
-
+  input {
+    margin: 0.6rem 0;
+  }
   .grid-2,
   .grid-3,
   .grid-4 {
