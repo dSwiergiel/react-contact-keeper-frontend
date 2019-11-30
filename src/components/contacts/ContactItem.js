@@ -34,7 +34,7 @@ const ContactItem = ({ contact }) => {
             'badge ' +
             (type.toLowerCase() === 'professional'
               ? 'badge-success'
-              : 'badge-primary')
+              : 'badge-second-primary')
           }
         >
           {/* Makes first character capital and then adds the rest of the word back starting after the frist character */}

@@ -31,7 +31,8 @@
 /* / Scroll bar */
 
 :root {
-  --primary-color: #21324f;
+  --primary-color: #b33939;
+  --second-primary-color: #2980b9;
   --dark-color: #333333;
   --light-color: #fff;
   --danger-color: #dc3545;
@@ -267,6 +268,14 @@ img {
 .badge-primary,
 .alert-primary {
   background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-second-primary,
+.bg-second-primary,
+.badge-second-primary,
+.alert-second-primary {
+  background: var(--second-primary-color);
   color: #fff;
 }
 
