@@ -7,7 +7,7 @@
 /* width */
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* Track */
@@ -31,11 +31,11 @@
 /* / Scroll bar */
 
 :root {
-  --primary-color: #003699;
+  --primary-color: #21324f;
   --dark-color: #333333;
-  --light-color: #f4f4f4;
+  --light-color: #fff;
   --danger-color: #dc3545;
-  --success-color: #28a745;
+  --success-color: #6d8764;
 }
 
 * {
@@ -48,7 +48,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
+  background-color: #f4f5f7;
   color: #333;
 }
 
@@ -123,7 +123,9 @@ img {
 .card {
   padding: 1rem;
   border: #ccc 1px dotted;
-  margin: 0 0 0.7rem;
+  /* margin: 0 0 0.7rem; */
+  margin: 0 0.7rem 0.7rem 0.7rem;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 /* List */
@@ -246,7 +248,7 @@ img {
   font-size: 0.8rem;
   padding: 0.2rem 0.7rem;
   text-align: center;
-  margin: 0.3rem;
+  /* margin: 0.3rem; */
   background: var(--light-color);
   color: #333;
   border-radius: 5px;
@@ -428,8 +430,8 @@ table th {
 }
 .item-exit-active {
   opacity: 0;
-  transform: scale(0.1);
-  transition: opacity 300ms, transform 400ms;
+  transform: scale(0.01);
+  transition: opacity 300ms, transform 500ms;
 }
 
 /* Mobile Styles */

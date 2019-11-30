@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
-import PropTypes from "prop-types";
-import ContactContext from "../../context/contact/contactContext";
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+import ContactContext from '../../context/contact/contactContext';
 
 const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext);
@@ -15,20 +15,32 @@ const ContactItem = ({ contact }) => {
   return (
     <div className='card bg-light'>
       <h3 className='text-primary text-left'>
-        {name}{" "}
+        {name}{' '}
+        <p style={{ float: 'right' }}>
+          <button
+            className='btn btn-dark btn-sm'
+            onClick={() => setCurrent(contact)}
+          >
+            Edit
+          </button>
+          <button className='btn btn-danger btn-sm' onClick={onDelete}>
+            Delete
+          </button>
+        </p>
+      </h3>
+      <p>
         <span
-          style={{ float: "right" }}
           className={
-            "badge " +
-            (type.toLowerCase() === "professional"
-              ? "badge-success"
-              : "badge-primary")
+            'badge ' +
+            (type.toLowerCase() === 'professional'
+              ? 'badge-success'
+              : 'badge-primary')
           }
         >
           {/* Makes first character capital and then adds the rest of the word back starting after the frist character */}
           {type.charAt(0).toUpperCase() + type.slice(1)}
         </span>
-      </h3>
+      </p>
       <ul className='list'>
         {email && (
           <li>
@@ -41,23 +53,12 @@ const ContactItem = ({ contact }) => {
           </li>
         )}
       </ul>
-      <p>
-        <button
-          className='btn btn-dark btn-sm'
-          onClick={() => setCurrent(contact)}
-        >
-          Edit
-        </button>
-        <button className='btn btn-danger btn-sm' onClick={onDelete}>
-          Delete
-        </button>
-      </p>
     </div>
   );
 };
 
 ContactItem.propTypes = {
-  conatct: PropTypes.object.isRequired
+  contact: PropTypes.object.isRequired
 };
 
 export default ContactItem;
