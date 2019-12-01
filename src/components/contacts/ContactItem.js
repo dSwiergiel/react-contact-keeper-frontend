@@ -21,10 +21,12 @@ const ContactItem = ({ contact }) => {
             className='btn btn-dark btn-sm'
             onClick={() => setCurrent(contact)}
           >
-            Edit
+            <i className='far fa-edit'></i>{' '}
+            <span className='hide-sm'>Edit</span>
           </button>
           <button className='btn btn-danger btn-sm' onClick={onDelete}>
-            Delete
+            <i className='far fa-trash-alt'></i>{' '}
+            <span className='hide-sm'>Delete</span>
           </button>
         </p>
       </h3>

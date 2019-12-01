@@ -445,8 +445,15 @@ table th {
 
 /* Mobile Styles */
 @media (max-width: 400px) {
+  .container {
+    padding: 10px;
+  }
   .hide-sm {
     display: none;
+  }
+  .btn-sm {
+    margin: 2px;
+    padding: 5px;
   }
   input {
     margin: 0.6rem 0;
