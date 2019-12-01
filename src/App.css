@@ -2,6 +2,20 @@
 
 /* Global Styles */
 
+/* prevent iOS default styles */
+textarea,
+input.text,
+input[type='text'],
+input[type='button'],
+input[type='phone'],
+input[type='email'],
+input[type='password'],
+input[type='submit'],
+.input-checkbox {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
 /* Scroll bar */
 
 /* width */
@@ -444,7 +458,7 @@ table th {
 }
 
 /* Mobile Styles */
-@media (max-width: 400px) {
+@media (max-width: 700px) {
   .container {
     padding: 10px;
   }

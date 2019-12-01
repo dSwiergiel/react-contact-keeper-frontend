@@ -3,6 +3,7 @@ import axios from 'axios';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
 import setAuthToken from '..//../utils/setAuthToken';
+import configuration from '../../config/config';
 
 import {
   REGISTER_SUCCESS,
@@ -15,6 +16,7 @@ import {
   CLEAR_ERRORS
 } from '../types';
 
+const apiURL = configuration.apiURL;
 const AuthState = props => {
   const initialState = {
     token: localStorage.getItem('token'),
@@ -33,7 +35,7 @@ const AuthState = props => {
     }
 
     try {
-      const res = await axios.get('/api/auth');
+      const res = await axios.get(`${apiURL}/api/auth`);
       dispatch({ type: USER_LOADED, payload: res.data });
     } catch (err) {
       dispatch({ type: AUTH_ERROR });
@@ -49,7 +51,7 @@ const AuthState = props => {
     };
 
     try {
-      const res = await axios.post('/api/users', formData, config);
+      const res = await axios.post(`${apiURL}/api/users`, formData, config);
       dispatch({
         type: REGISTER_SUCCESS,
         payload: res.data
@@ -73,7 +75,7 @@ const AuthState = props => {
     };
 
     try {
-      const res = await axios.post('/api/auth', formData, config);
+      const res = await axios.post(`${apiURL}/api/auth`, formData, config);
       dispatch({
         type: LOGIN_SUCCESS,
         payload: res.data
